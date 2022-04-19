@@ -8,6 +8,9 @@ from django.template import loader
 
 from .models import Question
 
+def showdata(request):
+    rec=Question.objects.all()
+    return render(request, 'record.html',{"data":rec})
 
 class IndexView(generic.ListView):
     template_name = 'mysecapp/index.html'
@@ -65,4 +68,4 @@ def vote(request, question_id):
 
 def showdata(request):
     rec=Question.objects.all()
-    return render(request,'mysecapp/record.html',{"data":rec})
+    return render(request, 'record.html',{"data":rec})

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysecproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/mysecapp'],
+        'DIRS': ['mysecapp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
