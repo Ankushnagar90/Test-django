@@ -2,9 +2,11 @@ from django.urls import path
 
 from . import views
 
+app_name = 'mysecapp'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<int:question_id>/detail', views.detail,name='detail'),
-    path('<int:question_id>/result/', views.result, name='result'),
-    path('<int:question_id>/vote/',views.vote,name='vote'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('/record', views.showdata,name='record'),
+    path('<int:pk>/detail/', views.DetailView.as_view(), name='detail'),
+    path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
+    path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
